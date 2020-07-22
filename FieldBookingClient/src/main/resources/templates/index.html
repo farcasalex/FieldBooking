@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000"/>
+    <title>Welcome - Field Booking</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" data-aos="fade-right" data-aos-delay="400" href="#" style="color: #42dca3;">Field Booking</a><button data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link active js-scroll-trigger" data-aos="fade-right" data-aos-delay="500" href="#about">About</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" data-aos="fade-right" data-aos-delay="600" href="#register">Register</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" data-aos="fade-right" data-aos-delay="700" href="#contact">contact</a></li>
+                    <li class="nav-item nav-link js-scroll-trigger" role="presentation"><a class="nav-link js-scroll-trigger" data-aos="fade-right" data-aos-delay="800" th:href="${#mvc.url('UC#login').build()}">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image: url(&quot;/assets/img/intro-soccer.jpg&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;box-shadow: inset 0px -200px 100px 0px rgba(0,0,0);width: 100%;height: 100vh;">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 data-aos="fade-right" data-aos-delay="400" class="brand-heading" style="color: #42dca3;background-color: rgba(255,255,255,0);">Field Booking</h1>
+                        <p data-aos="fade-right" data-aos-delay="500" class="intro-text" style="margin-top: 150px;">Practicing your favourite sport has never been easier.<br>Book your field now.</p><a class="btn btn-link btn-circle" role="button" data-aos="fade-right" data-aos-delay="600" href="#about"><i class="fa fa-angle-double-down animated"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="about" class="content-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 data-aos="zoom-in" data-aos-delay="300">About Field Booking</h2>
+                    <p data-aos="zoom-in" data-aos-delay="400">Field Booking is a website meant to bridge the gap between the field owners and the customers.</p>
+                    <p data-aos="fade" data-aos-delay="500"><br>&nbsp;It was created after realising that a platform like this doesn't exist and that making a reservation requires a lot of time and phone calls.<br></p>
+                    <p data-aos="fade" data-aos-delay="600">It is free for anyone to use and "time is money". So, it's worth it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="register" class="register-section content-section text-center" style="background-image: url(&quot;/assets/img/soccer-ball.jpg&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;box-shadow: inset 0px 100px 100px 0px rgba(0,0,0), inset 0px -200px 100px 0px rgba(0,0,0);">
+        <div class="container">
+            <div class="col-lg-8 mx-auto" data-aos="flip-up" data-aos-delay="300">
+                <h1>Join us now</h1>
+                <p>Login or register and start booking right away.</p><a class="btn btn-primary btn-lg btn-default" role="button" th:href="${#mvc.url('UC#login').build()}">Visit Register Page</a></div>
+        </div>
+    </section>
+    <section id="contact" class="content-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 data-aos="fade-down" data-aos-delay="300">Are you an owner?</h2>
+                    <p data-aos="fade-down" data-aos-delay="300">If you are a field owner feel free to leave us a comment on the<a href="#">&nbsp;Contact page</a>&nbsp;. We'll contact you in the shortest time possible. We are also present 24/7 on social media.</p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" data-aos="fade-right" data-aos-delay="400" type="button" style="width: 165px;"><i class="fa fa-google-plus fa-fw"></i><span class="network-name">&nbsp; Google+</span></button></li>
+                        <li
+                            class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" data-aos="fade-right" data-aos-delay="500" type="button" style="width: 165px;"><i class="fa fa-twitter fa-fw"></i><span class="network-name">&nbsp;Twitter</span></button></li>
+                            <li
+                                class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" data-aos="fade-right" data-aos-delay="700" type="button" style="width: 165px;"><i class="fa fa-facebook fa-fw"></i><span class="network-name">&nbsp;facebook</span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="map-clean"><iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDkSB7PP46XMZNCSuX9c0sbdXKgXnQ601A&amp;q=Cluj-Napoca%2C+Romania&amp;zoom=15" width="100%" height="450" style="filter: grayscale(100%);"></iframe></div>
+    <footer>
+        <div class="container text-center">
+            <p>Copyright ©&nbsp;Field Booking 2020</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="/assets/js/script.min.js"></script>
+</body>
+
+</html>

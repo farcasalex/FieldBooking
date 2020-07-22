@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000"/>
+    <title>Home - Field Booking</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" data-aos="fade-right" data-aos-delay="400" href="#" style="color: #42dca3;">Field Booking</a><button data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item nav-link" role="presentation">
+                        <div class="nav-item dropdown" style="padding-top: 8px;padding-bottom: 8px;"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-aos="fade-right" data-aos-delay="900" href="#" style="margin: 0;top: 50%;-ms-transform: translateY(-50%);transform: translateY(-50%);position: relative;" th:text="${session.currentUser.getUsername()}"> username</a>
+                            <div
+                                class="dropdown-menu dropdown-menu-right" role="menu" style="background-color: rgba(255,253,253,0.12);">
+                                <a class="dropdown-item" role="presentation" th:href="${#mvc.url('UC#getDetails').arg(0, session.currentUser.getId()).build()}" style="background-color: rgba(0,0,0,0);">Details</a>
+                                <a class="dropdown-item" role="presentation" th:href="${#mvc.url('UC#logout').build()}" style="background-color: rgba(255,255,255,0);">Logout </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="projects-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Facilities</h2>
+                <p class="text-center">Choosing a facility is a great way to start your search for the perfect field.</p>
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 col-lg-4 item"  th:if="${facilities.isEmpty()}">
+                    <h3 class="name">No facilities</h3>
+                </div>
+                <div class="col-sm-6 col-lg-4 item" th:unless="${facilities.isEmpty()}" th:each="facility : ${facilities}">
+                    <img class="img-fluid" src="/assets/img/soccer-field.jpg">
+                    <h3 class="name" th:text="${facility.getName()}" style="min-height: 70px;"><strong>BAZA SPORTIVA</strong><br></h3>
+                    <p class="description" th:unless="${facility.getAddress() == null}" th:text=" ${'Address: ' + facility.getAddress().getCity() + ', ' + facility.getAddress().getStreet() + ' ' + facility.getAddress().getNumber()}" >Text de descriere....</p>
+                    <p class="description" th:unless="${facility.getRating() == null}" th:text="'Rating: ' + ${facility.getRating()}">Text de descriere....</p>
+                    <a class="btn btn-primary btn-block" role="button" style="background-color: #42dca3;margin-top: 20px;" th:href="${#mvc.url('FC#details').arg(0, facility.getId()).build()}">More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container text-center">
+            <p>Copyright ©&nbsp;Field Booking 2020</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="/assets/js/script.min.js"></script>
+</body>
+
+</html>
