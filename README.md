@@ -2,7 +2,7 @@
 
 Field Booking is a web application designed in order to bridge the gap between the sports field owners and the customers.
 
-THe app was built using HTML with Thymeleaf for the client side and Java and MYSQL for the server side.
+THe app was built using HTML + Thymeleaf for the client side and Java + MYSQL for the server side.
 
 ![](https://github.com/farcasalex/FieldBooking/blob/master/screenshots/welcome.png)
 
